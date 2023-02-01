@@ -1,2 +1,2 @@
 # learn-go-with-tests
-https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/hello-world#a-note-on-source-control
+https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/hello-world#back-to-source-control
