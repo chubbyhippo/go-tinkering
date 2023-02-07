@@ -1,5 +1,10 @@
 package structs_methods_and_interfaces
 
+type Rectangle struct {
+	Width  float64
+	Height float64
+}
+
 func Perimeter(width float64, height float64) float64 {
 	return width + height + width + height
 }
