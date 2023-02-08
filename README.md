@@ -1,2 +1,2 @@
 # learn-go-with-tests
-https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/structs-methods-and-interfaces#refactor-1
+https://quii.gitbook.io/learn-go-with-tests/v/master/go-fundamentals/structs-methods-and-interfaces#wait-what
