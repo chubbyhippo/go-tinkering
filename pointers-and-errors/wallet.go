@@ -1,13 +1,16 @@
 package pointers_and_errors
 
+import "fmt"
+
 type Wallet struct {
-	Amount int
+	balance int
 }
 
-func (w Wallet) Deposit(amount int) {
-	w.Amount += amount
+func (w *Wallet) Deposit(amount int) {
+	fmt.Printf("address of balance in Deposit is %v \n", &w.balance)
+	w.balance += amount
 }
 
-func (w Wallet) Balance() int {
-	return w.Amount
+func (w *Wallet) Balance() int {
+	return w.balance
 }
