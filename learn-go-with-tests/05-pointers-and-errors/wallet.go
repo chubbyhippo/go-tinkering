@@ -1,4 +1,4 @@
-package pointers_and_errors
+package _5_pointers_and_errors
 
 import "fmt"
 
