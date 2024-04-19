@@ -2,33 +2,41 @@ package main
 
 import "testing"
 
-func TestHello(t *testing.T) {
-	t.Run("saying hello to people", func(t *testing.T) {
-		got := Hello("Hippo", "")
-		want := "Hello, Hippo"
-
-		assertCorrectMessage(t, got, want)
-	})
-	t.Run("say 'Hello, Hippo' when an empty string is supplied", func(t *testing.T) {
-		got := Hello("", "")
-		want := "Hello, Hippo"
-
-		assertCorrectMessage(t, got, want)
-	})
-	t.Run("in Spanish", func(t *testing.T) {
-		got := Hello("Hippo", "Spanish")
-		want := "Hola, Hippo"
-		assertCorrectMessage(t, got, want)
-	})
-	t.Run("in French", func(t *testing.T) {
-		got := Hello("Hippo", "French")
-		want := "Bonjour, Hippo"
-		assertCorrectMessage(t, got, want)
-	})
+var tests = map[string]struct {
+	name     string
+	language string
+	result   string
+}{
+	"should say hello to people": {
+		name:     "Hippo",
+		language: "",
+		result:   "Hello, Hippo",
+	},
+	"should say Hello, Hippo when an empty string is input": {
+		name:     "",
+		language: "",
+		result:   "Hello, Hippo",
+	},
+	"should say Hello in Spanish": {
+		name:     "Hippo",
+		language: "Spanish",
+		result:   "Hola, Hippo",
+	},
+	"should say Hello in French": {
+		name:     "Hippo",
+		language: "French",
+		result:   "Bonjour, Hippo",
+	},
 }
 
-func assertCorrectMessage(t *testing.T, got string, want string) {
-	if got != want {
-		t.Errorf("got %q want %q", got, want)
+func TestHello(t *testing.T) {
+	for name, tt := range tests {
+		t.Run(name, func(t *testing.T) {
+			got := Hello(tt.name, tt.language)
+			want := tt.result
+			if got != want {
+				t.Errorf("got %q want %q", got, want)
+			}
+		})
 	}
 }
