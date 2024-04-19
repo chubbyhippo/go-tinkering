@@ -32,7 +32,6 @@ var tests = map[string]struct {
 func TestHello(t *testing.T) {
 	for name, tt := range tests {
 		t.Run(name, func(t *testing.T) {
-			t.Parallel()
 			got := Hello(tt.name, tt.language)
 			want := tt.result
 			if got != want {
