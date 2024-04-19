@@ -1,4 +1,4 @@
-package _1_integers
+package integers
 
 import "testing"
 
