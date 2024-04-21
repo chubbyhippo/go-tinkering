@@ -20,3 +20,5 @@ func assertStrings(t testing.TB, got, want string) {
 		t.Errorf("got %q, want %q", got, want)
 	}
 }
+
+// https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/maps#write-the-test-first-1
