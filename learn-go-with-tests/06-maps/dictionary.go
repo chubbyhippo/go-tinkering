@@ -1,5 +1,7 @@
 package main
 
-func Search(dictionary map[string]string, word string) string {
-	return "this is just a test"
+type Dictionary map[string]string
+
+func (d Dictionary) Search(key string) string {
+	return d[key]
 }
