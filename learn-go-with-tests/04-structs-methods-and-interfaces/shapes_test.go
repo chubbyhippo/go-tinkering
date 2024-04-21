@@ -1,4 +1,4 @@
-package _4_structs_methods_and_interfaces
+package main
 
 import "testing"
 
