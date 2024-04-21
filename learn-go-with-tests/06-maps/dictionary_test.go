@@ -32,4 +32,4 @@ func assertStrings(t testing.TB, got, want string) {
 	}
 }
 
-// https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/maps#write-the-test-first-1
+// https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/maps#write-the-test-first-2
