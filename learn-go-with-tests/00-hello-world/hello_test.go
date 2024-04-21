@@ -1,6 +1,8 @@
 package main
 
-import "testing"
+import (
+	"testing"
+)
 
 var tests = map[string]struct {
 	name     string
@@ -34,9 +36,14 @@ func TestHello(t *testing.T) {
 		t.Run(name, func(t *testing.T) {
 			got := Hello(tt.name, tt.language)
 			want := tt.result
-			if got != want {
-				t.Errorf("got %q want %q", got, want)
-			}
+			assertStrings(t, got, want)
 		})
+	}
+}
+
+func assertStrings(t testing.TB, got string, want string) {
+	t.Helper()
+	if got != want {
+		t.Errorf("got %q want %q", got, want)
 	}
 }
