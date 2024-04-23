@@ -35,8 +35,9 @@ func TestAdd(t *testing.T) {
 	}
 
 	assertStrings(t, got, want)
-
 }
+
+// https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/maps#pointers-copies-et-al
 
 func assertStrings(t testing.TB, got, want string) {
 	t.Helper()
@@ -45,5 +46,3 @@ func assertStrings(t testing.TB, got, want string) {
 		t.Errorf("got %q, want %q", got, want)
 	}
 }
-
-// https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/maps#pointers-copies-et-al
