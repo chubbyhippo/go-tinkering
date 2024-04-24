@@ -39,7 +39,6 @@ func TestAdd(t *testing.T) {
 
 	})
 	t.Run("should return error when existing word", func(t *testing.T) {
-
 		word := "test"
 		definition := "this is just a test"
 		dictionary := Dictionary{word: definition}
@@ -58,7 +57,6 @@ func assertError(t testing.TB, got, want error) {
 
 }
 
-// https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/maps#write-the-test-first-3
 func assertDefinition(t testing.TB, dictionary Dictionary, word, definition string) {
 	t.Helper()
 
