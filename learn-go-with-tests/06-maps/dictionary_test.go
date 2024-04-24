@@ -49,6 +49,8 @@ func TestAdd(t *testing.T) {
 	})
 }
 
+// https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/maps#write-the-test-first-5
+
 func TestUpdate(t *testing.T) {
 	word := "test"
 	definition := "this is just a test"
