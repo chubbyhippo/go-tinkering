@@ -34,6 +34,7 @@ func TestAdd(t *testing.T) {
 	assertDefinition(t, dictionary, word, definition)
 }
 
+// https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/maps#write-the-test-first-3
 func assertDefinition(t testing.TB, dictionary Dictionary, word, definition string) {
 	t.Helper()
 
@@ -44,8 +45,6 @@ func assertDefinition(t testing.TB, dictionary Dictionary, word, definition stri
 
 	assertStrings(t, got, definition)
 }
-
-// https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/maps#pointers-copies-et-al
 
 func assertStrings(t testing.TB, got, want string) {
 	t.Helper()
