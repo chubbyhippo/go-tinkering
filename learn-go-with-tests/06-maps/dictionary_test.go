@@ -62,6 +62,16 @@ func TestUpdate(t *testing.T) {
 
 		assertDefinition(t, dictionary, word, newDefinition)
 	})
+	t.Run("should return error when word does not exist", func(t *testing.T) {
+
+		word := "test"
+		dictionary := Dictionary{}
+		newDefinition := "new definition"
+
+		err := dictionary.Update(word, newDefinition)
+
+		assertError(t, err, ErrWordDoesNotExist)
+	})
 
 }
 
