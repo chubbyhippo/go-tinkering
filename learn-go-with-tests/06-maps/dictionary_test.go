@@ -58,7 +58,10 @@ func TestUpdate(t *testing.T) {
 		dictionary := Dictionary{word: definition}
 		newDefinition := "new definition"
 
-		dictionary.Update(word, newDefinition)
+		err := dictionary.Update(word, newDefinition)
+		if err != nil {
+			return
+		}
 
 		assertDefinition(t, dictionary, word, newDefinition)
 	})
