@@ -83,6 +83,10 @@ func TestDelete(t *testing.T) {
 	dictionary := Dictionary{word: definition}
 
 	dictionary.Delete(word)
+	_, err := dictionary.Search(word)
+	if !errors.Is(err, ErrNotFound) {
+		t.Errorf("expected %q to be deleted", word)
+	}
 
 }
 
