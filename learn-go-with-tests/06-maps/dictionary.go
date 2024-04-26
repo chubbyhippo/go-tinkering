@@ -12,8 +12,8 @@ var (
 	ErrWordDoesNotExist = errors.New("cannot update word because it does not exist")
 )
 
-func (d Dictionary) Search(key string) (string, error) {
-	definition, ok := d[key]
+func (d Dictionary) Search(word string) (string, error) {
+	definition, ok := d[word]
 	if !ok {
 		return "", ErrorNotFound
 	}
