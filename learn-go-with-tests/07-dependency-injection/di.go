@@ -3,7 +3,8 @@ package main
 import (
 	"fmt"
 	"io"
-	"os"
+	"log"
+	"net/http"
 )
 
 func Greet(writer io.Writer, name string) {
@@ -13,8 +14,10 @@ func Greet(writer io.Writer, name string) {
 	}
 }
 
-func main() {
-	Greet(os.Stdout, "Dog")
+func GreeterHandler(w http.ResponseWriter, _ *http.Request) {
+	Greet(w, "world")
 }
 
-// https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/dependency-injection#the-internet
+func main() {
+	log.Fatal(http.ListenAndServe(":8080", http.HandlerFunc(GreeterHandler)))
+}
