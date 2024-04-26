@@ -16,3 +16,5 @@ func Greet(writer io.Writer, name string) {
 func main() {
 	Greet(os.Stdout, "Dog")
 }
+
+// https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/dependency-injection#the-internet
