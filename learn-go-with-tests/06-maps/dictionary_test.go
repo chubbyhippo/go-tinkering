@@ -49,8 +49,6 @@ func TestAdd(t *testing.T) {
 	})
 }
 
-// https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/maps#write-the-test-first-5
-
 func TestUpdate(t *testing.T) {
 	t.Run("should update word", func(t *testing.T) {
 		word := "test"
@@ -77,6 +75,8 @@ func TestUpdate(t *testing.T) {
 	})
 
 }
+
+// https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/maps#write-the-test-first-6
 
 func assertError(t testing.TB, got, want error) {
 	t.Helper()
