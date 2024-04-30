@@ -2,10 +2,12 @@ package main
 
 import (
 	"bytes"
+	"io"
 	"net/http"
 	"net/http/httptest"
 	"strings"
 	"testing"
+	"time"
 )
 
 func TestGreet(t *testing.T) {
@@ -43,4 +45,25 @@ func TestGreeterHandler(t *testing.T) {
 		t.Errorf("handler returned unexpected body: got %v want %v",
 			rr.Body.String(), expected)
 	}
+}
+
+func TestMainFunction(t *testing.T) {
+	go main()
+
+	time.Sleep(time.Second * 1)
+
+	resp, err := http.Get("http://localhost:8080")
+	if err != nil {
+		t.Fatalf("Could not send GET request: %v", err)
+	}
+
+	if resp.StatusCode != http.StatusOK {
+		t.Fatalf("Expected status 200 OK, but got %v", resp.StatusCode)
+	}
+	defer func(Body io.ReadCloser) {
+		err := Body.Close()
+		if err != nil {
+
+		}
+	}(resp.Body)
 }
