@@ -9,15 +9,17 @@ import (
 )
 
 func TestGreet(t *testing.T) {
-	buffer := bytes.Buffer{}
-	Greet(&buffer, "Hippo")
+	t.Run("should return \"Hello, Hippo\"", func(t *testing.T) {
+		buffer := bytes.Buffer{}
+		Greet(&buffer, "Hippo")
 
-	got := buffer.String()
-	want := "Hello, Hippo"
+		got := buffer.String()
+		want := "Hello, Hippo"
 
-	if got != want {
-		t.Errorf("got %q, want %q", got, want)
-	}
+		if got != want {
+			t.Errorf("got %q, want %q", got, want)
+		}
+	})
 }
 
 func TestGreeterHandler(t *testing.T) {
