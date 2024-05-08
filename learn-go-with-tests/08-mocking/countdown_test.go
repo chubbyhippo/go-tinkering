@@ -21,4 +21,4 @@ Go!`
 	}
 }
 
-// https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/mocking#refactor-1
+// https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/mocking#mocking
