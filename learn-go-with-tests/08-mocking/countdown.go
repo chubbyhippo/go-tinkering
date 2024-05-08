@@ -11,7 +11,10 @@ func main() {
 }
 
 func Countdown(out io.Writer) {
-	fmt.Fprintf(out, "3")
+	for i := 3; i > 0; i-- {
+		fmt.Fprintln(out, i)
+	}
+	fmt.Fprint(out, "Go!")
 }
 
 // https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/mocking#write-the-test-first-1
